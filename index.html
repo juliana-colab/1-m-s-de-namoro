@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> Para Pedro💚 </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #b6d7a8; /* verde pastel */
+      --dark: #0e0e0e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--dark);
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    /* Tela inicial */
+    #intro {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark);
+      z-index: 5;
+      transition: opacity 1s ease;
+    }
+    #intro h1 {
+      font-family: 'Great Vibes', cursive;
+      color: var(--green);
+      font-size: 40px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    #enterBtn {
+      padding: 15px 30px;
+      background: var(--green);
+      color: var(--dark);
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .3s ease;
+    }
+    #enterBtn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Site principal */
+    .site {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      overflow-y: auto;
+      background: var(--dark);
+      position: relative;
+    }
+
+    header {
+      margin-top: 20px;
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      color: var(--green);
+      font-size: 42px;
+    }
+    header p {
+      color: #d1d1d1;
+      margin-top: 5px;
+    }
+
+    /* Carrossel */
+    .carousel {
+      position: relative;
+      width: 80%;
+      max-width: 600px;
+      height: 400px;
+      overflow: hidden;
+      margin: 40px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(182, 215, 168, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .carousel img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    .text {
+      max-width: 700px;
+      padding: 20px;
+      color: var(--green);
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .photo-btn {
+      background: var(--green);
+      color: var(--dark);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform .2s ease;
+    }
+    .photo-btn:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      color: #777;
+      margin: 20px;
+      font-size: 14px;
+    }
+
+    /* Popup */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+      z-index: 10;
+    }
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-content {
+      position: relative;
+      animation: zoomIn .4s ease;
+    }
+    .modal-content img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 15px var(--green);
+    }
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: var(--green);
+      color: var(--dark);
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Corações */
+    .heart {
+      position: fixed;
+      color: var(--green);
+      font-size: 20px;
+      opacity: 0.8;
+      animation: float 6s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Tela inicial -->
+  <div id="intro">
+    <h1> Para Pedro💚 </h1>
+    <button id="enterBtn">Clica aqui, meu amor 💚</button>
+  </div>
+
+  <!-- Site principal -->
+  <div class="site" id="siteMain">
+    <header>
+      <h1>Feliz dia 18, meu amor 💚</h1>
+      <p>1 mês de nós dois 🌙</p>
+    </header>
+
+    <div class="carousel" id="carousel">
+      <img src="IMG_4159.jpg" class="active">
+      <img src="IMG_4174.jpg">
+      <img src="IMG_4210.jpg">
+      <img src="IMG_4486.jpg">
+      <img src="IMG_4571.jpg">
+      <img src="IMG_4719.png">
+      <img src="img12.jpg">
+    </div>
+
+    <div class="text">
+      Cada segundo contigo é um pedacinho de eternidade 💚  
+      Nosso amor é simples, bonito e cheio de vida. Uma das melhores coisas da minnha vida, esse ano, 
+      foi conhecer você meu amor! Espero que você goste muito do site!! Amo você. Amor, vc é meu lugar preferido. 
+    </div>
+
+    <div class="buttons">
+      <button class="photo-btn" data-img="img12.jpg">Foto 1 💞</button>
+      <button class="photo-btn" data-img="IMG_4571.jpg">Foto 2 💚</button>
+      <button class="photo-btn" data-img="IMG_4210.jpg">Foto 3 💕</button>
+    </div>
+
+    <footer>Feito com amor por Julia  💚</footer>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="photoModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModal">×</button>
+      <img src="" id="modalImg">
+    </div>
+  </div>
+
+  <!-- Música -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2023/03/28/audio_3cfa248c28.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Botão inicial
+    const intro = document.getElementById('intro');
+    const site = document.getElementById('siteMain');
+    document.getElementById('enterBtn').addEventListener('click', () => {
+      intro.style.opacity = '0';
+      setTimeout(() => {
+        intro.style.display = 'none';
+        site.style.display = 'flex';
+      }, 1000);
+    });
+
+    // Carrossel
+    const imgs = document.querySelectorAll('#carousel img');
+    let i = 0;
+    setInterval(() => {
+      imgs[i].classList.remove('active');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('active');
+    }, 4000);
+
+    // Popup
+    const modal = document.getElementById('photoModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.getElementById('closeModal');
+    document.querySelectorAll('.photo-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        modalImg.src = btn.dataset.img;
+        modal.classList.add('active');
+      });
+    });
+    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', e => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+
+    // Corações flutuantes
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '💚';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 600);
+  </script>
+</body>
+</html>
